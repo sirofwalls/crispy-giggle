@@ -15,3 +15,4 @@ Color Scheme i want to use... maybe:
 - I am loosly following along with a tutorial for the styling. I am not a designer by nature.
 - Trying out Styled components.. pray for me.
 - Added react scroll... do i need it though?
+- Aparently i had a typo in this file and my Desktop was not configured correctly so GitHub Shows my first 2 commits as unverified... oh JOY!
