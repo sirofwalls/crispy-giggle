@@ -3,8 +3,8 @@ import {Link as LinkR} from 'react-router-dom';
 import {Link as LinkS} from 'react-scroll';
 import {FaTimes} from 'react-icons/fa';
 
-const color = '#01bf71';
-const blackColor = '#010606';
+const color = 'rgba(96, 168, 229, 1)';
+const blackColor = 'rgba(1, 6, 6, 1)';
 
 export const SidebarContainer = styled.aside`
     position: fixed;

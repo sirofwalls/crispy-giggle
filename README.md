@@ -5,7 +5,7 @@ This will be for me knowledge, as I try to make this from scratch to learn react
 Notes as i go along:
 
 Color Scheme i want to use... maybe:
-#34490de
+#3490de
 #60a8e5
 #1f76c0
 #111111
@@ -16,3 +16,5 @@ Color Scheme i want to use... maybe:
 - Trying out Styled components.. pray for me.
 - Added react scroll... do i need it though?
 - Aparently i had a typo in this file and my Desktop was not configured correctly so GitHub Shows my first 2 commits as unverified... oh JOY!
+- I completed the "hero section" with some placeholder text and replaced the Nav text with a real png icon... that took way too long to add that in. I am thinking about an animation for it right now. I am also not going with the color scheme at all becuase i forgot about it... woops!
+- I lied... i am using the color scheme a little... yay!

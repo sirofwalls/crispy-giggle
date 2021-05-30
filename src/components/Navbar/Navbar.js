@@ -1,13 +1,14 @@
 import React from 'react';
 import {FaBars, FaToggleOff} from 'react-icons/fa';
-import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
+import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink, NavImg} from './NavbarElements';
+import Image from '../../images/white_pw.png'
 
 const Navbar = ({toggle}) => {
     return (
         <>
             <Nav>
                 <NavbarContainer>
-                    <NavLogo to='/'>PlaceHolder</NavLogo>
+                    <NavLogo to='/'><NavImg src={Image} /></NavLogo>
                     <MobileIcon onClick={toggle}>
                         <FaBars />
                     </MobileIcon>
