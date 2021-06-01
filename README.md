@@ -19,3 +19,4 @@ Color Scheme i want to use... maybe:
 - I completed the "hero section" with some placeholder text and replaced the Nav text with a real png icon... that took way too long to add that in. I am thinking about an animation for it right now. I am also not going with the color scheme at all becuase i forgot about it... woops!
 - I lied... i am using the color scheme a little... yay!
 - Aparently i had a typo in this file and my Desktop was not configured correctly so GitHub Shows my first 2 commits as unverified... oh JOY!
+- The basic Info Section component is complete and 100% reusable and editable! I want to try to make the Blog picture more dynamic and show the latest post instead of a picture in the future. I'll worry about that after i get the posting process down. 

@@ -4,6 +4,7 @@ import {Link as LinkS} from 'react-scroll';
 
 const color ='rgba(96, 168, 229, 1)';
 const blackColor = 'rgba(1, 6, 6, 1)';
+const lightColor = 'rgba(242, 249, 255, 1)';
 const hoverColor ='rgba(96, 168, 229, 0.3)';
 
 export const Nav = styled.nav`
@@ -33,7 +34,7 @@ export const NavbarContainer = styled.div`
 `
 
 export const NavLogo = styled(LinkR)`
-    color: #fff;
+    color: ${lightColor};
     justify-self: flex-start;
     cursor: pointer;
     font-size: 1.5rem;
@@ -62,7 +63,7 @@ export const MobileIcon = styled.div`
         transform: translate(-100%, 60%);
         font-size: 1.8rem;
         cursor: pointer;
-        color: #fff;
+        color: ${lightColor};
     }
 `
 
@@ -83,7 +84,7 @@ export const NavItem = styled.li`
 `
 
 export const NavLinks = styled(LinkS)`
-    color: #fff;
+    color: ${lightColor};
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -125,6 +126,6 @@ export const NavBtnLink = styled(LinkR)`
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background: #fff;
+        background: ${lightColor};
     }
 `

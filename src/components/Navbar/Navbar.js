@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaBars, FaToggleOff} from 'react-icons/fa';
+import {FaBars} from 'react-icons/fa';
 import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink, NavImg} from './NavbarElements';
 import Image from '../../images/white_pw.png'
 
@@ -23,7 +23,7 @@ const Navbar = ({toggle}) => {
                             <NavLinks to='projects'>Projects</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='register'>Register</NavLinks>
+                            <NavLinks to='services'>Register</NavLinks>
                         </NavItem>
                     </NavMenu>
                     <NavBtn>

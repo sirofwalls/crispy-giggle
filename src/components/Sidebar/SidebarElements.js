@@ -5,13 +5,14 @@ import {FaTimes} from 'react-icons/fa';
 
 const color = 'rgba(96, 168, 229, 1)';
 const blackColor = 'rgba(1, 6, 6, 1)';
+const lightColor = 'rgba(242, 249, 255, 1)';
 
 export const SidebarContainer = styled.aside`
     position: fixed;
     z-index: 999;
     width: 100%;
     height: 100%;
-    background: #0d0d0d;
+    background: ${blackColor};
     display: grid;
     align-items: center;
     left: 0;
@@ -21,7 +22,7 @@ export const SidebarContainer = styled.aside`
 `
 
 export const CloseIcon = styled(FaTimes)`
-    color: #fff;
+    color: ${lightColor};
 `
 
 export const Icon = styled.div`
@@ -35,7 +36,7 @@ export const Icon = styled.div`
 `
 
 export const SidebarWrapper = styled.div`
-    color: #fff;
+    color: ${lightColor};
 `
 
 export const SidebarMenu = styled.ul`
@@ -58,7 +59,7 @@ export const SidebarLink = styled(LinkS)`
     list-style: none;
     transition: 0.2s ease-in-out;
     text-decoration: none;
-    color: #fff;
+    color: ${lightColor};
     cursor: pointer;
 
     &:hover {
@@ -76,7 +77,7 @@ export const SidebarLinkHome = styled(LinkR)`
     list-style: none;
     transition: 0.2s ease-in-out;
     text-decoration: none;
-    color: #fff;
+    color: ${lightColor};
     cursor: pointer;
 
     &:hover {
@@ -105,7 +106,7 @@ export const SidebarRoute = styled(LinkR)`
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background: #fff;
+        background: ${lightColor};
         color: #${color};
     }
 `
