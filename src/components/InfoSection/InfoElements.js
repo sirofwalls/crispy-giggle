@@ -1,12 +1,9 @@
 import styled from 'styled-components';
-
-const color = 'rgba(96, 168, 229, 1)';
-const blackColor = 'rgba(1, 6, 6, 1)';
-const lightColor = 'rgba(242, 249, 255, 1)';
+import { Style } from './../StyleVariables';
 
 export const InfoContainer = styled.div`
-    color: ${lightColor};
-    background: ${({lightBg}) => (lightBg ? lightColor : blackColor)};
+    color: ${Style.lightColor};
+    background: ${({lightBg}) => (lightBg ? Style.lightColor : Style.darkColor)};
 
     @media screen and (max-width: 768px) {
         padding: 100px 0;
@@ -54,7 +51,7 @@ export const TextWrapper = styled.div`
 `
 
 export const TopLine = styled.p`
-    color: ${color};
+    color: ${Style.mainColor};
     font-size: 1rem;
     line-height: 1rem;
     font-weight: 700;
@@ -68,7 +65,7 @@ export const Heading = styled.h1`
     font-size: 48px;
     line-height: 1.1;
     font-weight: 600;
-    color: ${({lightText}) => (lightText ? lightColor : blackColor)};
+    color: ${({lightText}) => (lightText ? Style.lightColor : Style.darkColor)};
 
     @media screen and (max-width: 480px) {
         font-size: 32px;
@@ -80,7 +77,7 @@ export const SubTitle = styled.p`
     margin-bottom: 35px;
     font-size: 18px;
     line-height: 24px;
-    color: ${({darkText}) => (darkText ? blackColor : lightColor)};
+    color: ${({darkText}) => (darkText ? Style.darkColor : Style.lightColor)};
 `
 
 export const BtnWrap = styled.div`

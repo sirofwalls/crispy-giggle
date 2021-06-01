@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-
-const color = 'rgba(96, 168, 229, 1)';
-const blackColor = 'rgba(1, 6, 6, 1)';
-const lightColor = 'rgba(242, 249, 255, 1)';
+import { Style } from './../StyleVariables';
 
 export const MultiInfoContainer = styled.div`
     height: 800px;
@@ -10,7 +7,7 @@ export const MultiInfoContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: ${({lightBg}) => (lightBg ? lightColor : blackColor)};
+    background: ${({lightBg}) => (lightBg ? Style.lightColor : Style.darkColor)};
 
     @media screen and (max-width: 768px) {
         height: 1100px;
@@ -41,7 +38,7 @@ export const MultiInfoWrapper = styled.div`
 `
 
 export const MultiInfoCard = styled.div`
-    background: ${({lightBg}) => (lightBg ? blackColor : lightColor)};
+    background: ${({lightBg}) => (lightBg ? Style.darkColor : Style.lightColor)};
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -67,8 +64,8 @@ export const MultiInfoIcon = styled.img`
 
 export const MultiInfoH1 = styled.h1`
     font-size: 2.5rem;
-    /* color: ${({cardTitleDark}) => (cardTitleDark ? blackColor : lightColor)}; */
-    color: ${color};
+    /* color: ${({cardTitleDark}) => (cardTitleDark ? Style.darkColor : Style.lightColor)}; */
+    color: ${Style.mainColor};
     margin-bottom: 64px;
 
     @media screen and (max-width: 480px) {
@@ -77,13 +74,13 @@ export const MultiInfoH1 = styled.h1`
 `
 
 export const MultiInfoH2 = styled.h2`
-    color: ${({cardTextDark}) => (cardTextDark ? blackColor : lightColor)};
+    color: ${({cardTextDark}) => (cardTextDark ? Style.darkColor : Style.lightColor)};
     font-size: 1rem;
     margin-bottom: 10px;
 `
 
 export const MultiInfoP = styled.p`
-    color: ${({cardTextDark}) => (cardTextDark ? blackColor : lightColor)};
+    color: ${({cardTextDark}) => (cardTextDark ? Style.darkColor : Style.lightColor)};
     font-size: 1rem;
     text-align: center;
 `

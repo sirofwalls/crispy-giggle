@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 import {Link as LinkR} from 'react-router-dom';
 import {Link as LinkS} from 'react-scroll';
-
-const color ='rgba(96, 168, 229, 1)';
-const blackColor = 'rgba(1, 6, 6, 1)';
-const lightColor = 'rgba(242, 249, 255, 1)';
-const hoverColor ='rgba(96, 168, 229, 0.3)';
+import { Style } from './../StyleVariables';
 
 export const Nav = styled.nav`
-    background: ${blackColor};
+    background: ${Style.darkColor};
     height: 80px;
     margin-top: -80px;
     display: flex;
@@ -34,7 +30,7 @@ export const NavbarContainer = styled.div`
 `
 
 export const NavLogo = styled(LinkR)`
-    color: ${lightColor};
+    color: ${Style.lightColor};
     justify-self: flex-start;
     cursor: pointer;
     font-size: 1.5rem;
@@ -63,7 +59,7 @@ export const MobileIcon = styled.div`
         transform: translate(-100%, 60%);
         font-size: 1.8rem;
         cursor: pointer;
-        color: ${lightColor};
+        color: ${Style.lightColor};
     }
 `
 
@@ -84,7 +80,7 @@ export const NavItem = styled.li`
 `
 
 export const NavLinks = styled(LinkS)`
-    color: ${lightColor};
+    color: ${Style.lightColor};
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -93,12 +89,12 @@ export const NavLinks = styled(LinkS)`
     cursor: pointer;
 
     &.active {
-        border-bottom: 3px solid ${color};
+        border-bottom: 3px solid ${Style.mainColor};
     }
 
     &:hover {
-        border-bottom: 3px solid ${color};
-        background: ${hoverColor};
+        border-bottom: 3px solid ${Style.mainColor};
+        background: ${Style.hoverColor};
     }
 `
 
@@ -113,10 +109,10 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(LinkR)`
     border-radius: 50px;
-    background: ${color};
+    background: ${Style.mainColor};
     white-space: nowrap;
     padding: 10px 22px;
-    color: ${blackColor};
+    color: ${Style.darkColor};
     font-size: 1rem;
     outline: none;
     border: none;
@@ -126,6 +122,6 @@ export const NavBtnLink = styled(LinkR)`
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background: ${lightColor};
+        background: ${Style.lightColor};
     }
 `

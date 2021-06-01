@@ -2,17 +2,14 @@ import styled from 'styled-components';
 import {Link as LinkR} from 'react-router-dom';
 import {Link as LinkS} from 'react-scroll';
 import {FaTimes} from 'react-icons/fa';
-
-const color = 'rgba(96, 168, 229, 1)';
-const blackColor = 'rgba(1, 6, 6, 1)';
-const lightColor = 'rgba(242, 249, 255, 1)';
+import { Style } from './../StyleVariables';
 
 export const SidebarContainer = styled.aside`
     position: fixed;
     z-index: 999;
     width: 100%;
     height: 100%;
-    background: ${blackColor};
+    background: ${Style.darkColor};
     display: grid;
     align-items: center;
     left: 0;
@@ -22,7 +19,7 @@ export const SidebarContainer = styled.aside`
 `
 
 export const CloseIcon = styled(FaTimes)`
-    color: ${lightColor};
+    color: ${Style.lightColor};
 `
 
 export const Icon = styled.div`
@@ -36,7 +33,7 @@ export const Icon = styled.div`
 `
 
 export const SidebarWrapper = styled.div`
-    color: ${lightColor};
+    color: ${Style.lightColor};
 `
 
 export const SidebarMenu = styled.ul`
@@ -59,11 +56,11 @@ export const SidebarLink = styled(LinkS)`
     list-style: none;
     transition: 0.2s ease-in-out;
     text-decoration: none;
-    color: ${lightColor};
+    color: ${Style.lightColor};
     cursor: pointer;
 
     &:hover {
-        color: ${color};
+        color: ${Style.mainColor};
         transition: 0.2s ease-in-out;
     }
 `
@@ -77,11 +74,11 @@ export const SidebarLinkHome = styled(LinkR)`
     list-style: none;
     transition: 0.2s ease-in-out;
     text-decoration: none;
-    color: ${lightColor};
+    color: ${Style.lightColor};
     cursor: pointer;
 
     &:hover {
-        color: ${color};
+        color: ${Style.mainColor};
         transition: 0.2s ease-in-out;
     }
 `
@@ -93,10 +90,10 @@ export const SideBtnWrap = styled.div`
 
 export const SidebarRoute = styled(LinkR)`
     border-radius: 50px;
-    background: ${color};
+    background: ${Style.mainColor};
     white-space: nowrap;
     padding: 16px 64px;
-    color: ${blackColor};
+    color: ${Style.darkColor};
     font-size: 1rem;
     outline: none;
     border: none;
@@ -106,7 +103,7 @@ export const SidebarRoute = styled(LinkR)`
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background: ${lightColor};
-        color: #${color};
+        background: ${Style.lightColor};
+        color: #${Style.mainColor};
     }
 `

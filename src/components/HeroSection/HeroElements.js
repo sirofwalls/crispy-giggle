@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 import {MdKeyboardArrowRight, MdArrowForward} from 'react-icons/md';
 import Image from '../../images/IMG_0370.JPG';
-
-const blackColor = 'rgba(1, 6, 6, 1)';
-const lightColor = 'rgba(242, 249, 255, 1)';
+import { Style } from './../StyleVariables';
 
 export const HeroContainer = styled.div`
-    background: ${blackColor};
+    background: ${Style.darkColor};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +53,7 @@ export const VideoBg = styled.video`
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
-    background: ${blackColor};
+    background: ${Style.darkColor};
 `
 
 export const HeroContent = styled.div`
@@ -69,7 +67,7 @@ export const HeroContent = styled.div`
 `
 
 export const HeroH1 = styled.h1`
-    color: ${lightColor};
+    color: ${Style.lightColor};
     font-size: 48px;
     text-align: center;
 
@@ -84,7 +82,7 @@ export const HeroH1 = styled.h1`
 
 export const HeroP = styled.p`
     margin-top: 24px;
-    color: ${lightColor};
+    color: ${Style.lightColor};
     font-size: 24px;
     text-align: center;
     max-width: 600px;
