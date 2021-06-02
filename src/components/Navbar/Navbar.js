@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {FaBars} from 'react-icons/fa';
 import {animateScroll as scroll} from 'react-scroll';
+import { NavMenuItems, NavButtonItems } from './../Variables/NavVariables';
 import {
     Nav,
     NavbarContainer,
@@ -44,22 +45,21 @@ const Navbar = ({toggle}) => {
                         <FaBars />
                     </MobileIcon>
                     <NavMenu>
-                        <NavItem>
-                            <NavLinks to='about' smooth={true} duration={500} spy={true} exact='true' offset={-80}>About</NavLinks>
-                        </NavItem>
-                        <NavItem>
-                            <NavLinks to='blog' smooth={true} duration={500} spy={true} exact='true' offset={-80}>BLOG</NavLinks>
-                        </NavItem>
-                        <NavItem>
-                            <NavLinks to='projects' smooth={true} duration={500} spy={true} exact='true' offset={-80}>Projects</NavLinks>
-                        </NavItem>
-                        <NavItem>
-                            <NavLinks to='services' smooth={true} duration={500} spy={true} exact='true' offset={-80}>Register</NavLinks>
-                        </NavItem>
+                        {NavMenuItems.map((item, index) => {
+                            return(
+                                <NavItem>
+                                    <NavLinks to={item.path} smooth={true} duration={500} spy={true} exact='true' offset={-80}>{item.title}</NavLinks>
+                                </NavItem>
+                            )
+                        })}
                     </NavMenu>
-                    <NavBtn>
-                        <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-                    </NavBtn>
+                    {NavButtonItems.map((item, index) => {
+                        return(
+                            <NavBtn key={index} enabled={item.enabled}>
+                                <NavBtnLink to={item.path}>{item.title}</NavBtnLink>
+                            </NavBtn>
+                        )
+                    })}
                 </NavbarContainer>
             </Nav>
         </>

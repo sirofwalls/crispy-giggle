@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Link as LinkR} from 'react-router-dom';
 import {Link as LinkS} from 'react-scroll';
 import {FaTimes} from 'react-icons/fa';
-import { Style } from './../StyleVariables';
+import { Style } from './../Variables/StyleVariables';
 
 export const SidebarContainer = styled.aside`
     position: fixed;
@@ -65,26 +65,8 @@ export const SidebarLink = styled(LinkS)`
     }
 `
 
-export const SidebarLinkHome = styled(LinkR)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    list-style: none;
-    transition: 0.2s ease-in-out;
-    text-decoration: none;
-    color: ${Style.lightColor};
-    cursor: pointer;
-
-    &:hover {
-        color: ${Style.mainColor};
-        transition: 0.2s ease-in-out;
-    }
-`
-
 export const SideBtnWrap = styled.div`
-    display: flex;
+    display: ${({enabled}) => (enabled ? 'flex' : 'none')};
     justify-content: center;
 `
 

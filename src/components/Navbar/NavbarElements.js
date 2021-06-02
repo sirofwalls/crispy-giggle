@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {Link as LinkR} from 'react-router-dom';
 import {Link as LinkS} from 'react-scroll';
-import { Style } from './../StyleVariables';
+import { Style } from './../Variables/StyleVariables';
 
 export const Nav = styled.nav`
     background: ${({navScroll}) => (navScroll ? Style.darkColor : 'transparent')};
@@ -99,7 +99,7 @@ export const NavLinks = styled(LinkS)`
 `
 
 export const NavBtn = styled.nav`
-    display: flex;
+    display: ${({enabled}) => (enabled ? 'flex' : 'none')};
     align-items: center;
 
     @media screen and (max-width: 768px) {

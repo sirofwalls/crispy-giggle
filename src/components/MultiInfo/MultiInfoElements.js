@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Style } from './../StyleVariables';
+import { Style } from './../Variables/StyleVariables';
 
 export const MultiInfoContainer = styled.div`
     height: 800px;

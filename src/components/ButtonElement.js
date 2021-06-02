@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-scroll';
-import { Style } from './StyleVariables';
+import { Style } from './Variables/StyleVariables';
 
 
 export const Button = styled(Link)`

@@ -28,7 +28,7 @@ const Footer = () => {
     return (
         <FooterContainer>
             <FooterWrapper>
-                <FooterLinksContainer>
+                {/* <FooterLinksContainer>
                     <FooterLinksWrapper>
                         <FooterItem>
                             <FooterItemTitle>Place Holder 1</FooterItemTitle>
@@ -65,16 +65,13 @@ const Footer = () => {
                             <FooterLink to='/signin'>Link 5</FooterLink>
                         </FooterItem>
                     </FooterLinksWrapper>
-                </FooterLinksContainer>
+                </FooterLinksContainer> */}
                 <FooterMedia>
                     <FooterMediaWrapper>
                         <MediaLogo to='/'onClick={toggleHome}>PTRWLSR</MediaLogo>
                         <MediaRights>ptrwlsr.com © {new Date().getFullYear()}</MediaRights>
                         <MediaSocialIcons>
-                            <SocialIcons href="/" target="_blank" aria-label="Facebook"><FaFacebook /></SocialIcons>
-                            <SocialIcons href="/" target="_blank" aria-label="Instagram"><FaInstagram /></SocialIcons>
-                            <SocialIcons href="/" target="_blank" aria-label="Youtube"><FaYoutube /></SocialIcons>
-                            <SocialIcons href="/" target="_blank" aria-label="Github"><FaGithub /></SocialIcons>
+                            <SocialIcons href="https://github.com/sirofwalls" target="_blank" aria-label="Github"><FaGithub /></SocialIcons>
                         </MediaSocialIcons>
                     </FooterMediaWrapper>
                 </FooterMedia>

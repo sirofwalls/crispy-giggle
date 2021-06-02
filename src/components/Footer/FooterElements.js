@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import { Style } from './../StyleVariables';
+import { Style } from './../Variables/StyleVariables';
 
 export const FooterContainer = styled.footer`
     background-color: ${Style.darkColor};
@@ -103,14 +103,14 @@ export const MediaRights = styled.small`
 
 export const MediaSocialIcons = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 240px;
 `
 
 export const SocialIcons = styled.a`
     color: ${Style.lightColor};
     font-size: 24px;
+    margin: 0 5px;
 
     &:hover {
         color: ${Style.mainColor};

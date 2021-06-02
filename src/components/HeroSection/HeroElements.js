@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {MdKeyboardArrowRight, MdArrowForward} from 'react-icons/md';
 import Image from '../../images/IMG_0370.JPG';
-import { Style } from './../StyleVariables';
+import { Style } from './../Variables/StyleVariables';
 
 export const HeroContainer = styled.div`
     background: ${Style.darkColor};
