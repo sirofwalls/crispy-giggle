@@ -20,3 +20,5 @@ Color Scheme i want to use... maybe:
 - I lied... i am using the color scheme a little... yay!
 - Aparently i had a typo in this file and my Desktop was not configured correctly so GitHub Shows my first 2 commits as unverified... oh JOY!
 - The basic Info Section component is complete and 100% reusable and editable! I want to try to make the Blog picture more dynamic and show the latest post instead of a picture in the future. I'll worry about that after i get the posting process down. 
+- I am starting to really like the reusable component with the data file and conditional formatting aspect. I already liked the component concept, but making it even more dynamic has been a challenge that i am loving! I am still bad at CSS though... more work on that to come!
+- I over thought the navbar and followed a tutorial a little too much with it... If i had a larger site it would be nice.. but i dont need that many links in the footer so there is going to be a lot of unused code... im ready for all the warnings! I also dont have that much Social Media so that will be underutilized.
