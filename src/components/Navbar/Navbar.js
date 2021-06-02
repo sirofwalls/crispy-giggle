@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {FaBars} from 'react-icons/fa';
+import {animateScroll as scroll} from 'react-scroll';
 import {
     Nav,
     NavbarContainer,
@@ -28,28 +29,32 @@ const Navbar = ({toggle}) => {
 
     useEffect(() => {
         window.addEventListener('scroll', changeScroll)
-    }, [])
+    }, []);
+
+    const toggleHome = () => {
+        scroll.scrollToTop();
+    }
 
     return (
         <>
             <Nav navScroll={navScroll}>
                 <NavbarContainer>
-                    <NavLogo to='/'><NavImg src={Image} /></NavLogo>
+                    <NavLogo to='/' onClick={toggleHome}><NavImg src={Image} /></NavLogo>
                     <MobileIcon onClick={toggle}>
                         <FaBars />
                     </MobileIcon>
                     <NavMenu>
                         <NavItem>
-                            <NavLinks to='about'>About</NavLinks>
+                            <NavLinks to='about' smooth={true} duration={500} spy={true} exact='true' offset={-80}>About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='blog'>BLOG</NavLinks>
+                            <NavLinks to='blog' smooth={true} duration={500} spy={true} exact='true' offset={-80}>BLOG</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='projects'>Projects</NavLinks>
+                            <NavLinks to='projects' smooth={true} duration={500} spy={true} exact='true' offset={-80}>Projects</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='services'>Register</NavLinks>
+                            <NavLinks to='services' smooth={true} duration={500} spy={true} exact='true' offset={-80}>Register</NavLinks>
                         </NavItem>
                     </NavMenu>
                     <NavBtn>

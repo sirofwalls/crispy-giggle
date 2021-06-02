@@ -1,7 +1,23 @@
 import React from 'react';
-import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SidebarLinkHome, SideBtnWrap, SidebarRoute } from './SidebarElements';
+import {animateScroll as scroll} from 'react-scroll';
+import {
+    SidebarContainer,
+    Icon,
+    CloseIcon,
+    SidebarWrapper,
+    SidebarMenu,
+    SidebarLink,
+    SidebarLinkHome,
+    SideBtnWrap,
+    SidebarRoute
+} from './SidebarElements';
 
-const Sidebar = ({isOpen, toggle}) => {
+    const Sidebar = ({isOpen, toggle}) => {
+        
+    const toggleHome = () => {
+        scroll.scrollToTop();
+    }
+
     return (
         <SidebarContainer isOpen={isOpen} onClick={toggle}>
             <Icon onClick={toggle}>
@@ -9,11 +25,11 @@ const Sidebar = ({isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLinkHome to='/' onClick={toggle}>Home</SidebarLinkHome>
-                    <SidebarLink to='about' onClick={toggle}>About</SidebarLink>
-                    <SidebarLink to='blog' onClick={toggle}>BLOG</SidebarLink>
-                    <SidebarLink to='projects' onClick={toggle}>Projects</SidebarLink>
-                    <SidebarLink to='register' onClick={toggle}>Register</SidebarLink>
+                    <SidebarLinkHome to='/' onClick={toggle, toggleHome}>Home</SidebarLinkHome>
+                    <SidebarLink to='about' onClick={toggle} smooth={true} duration={500} spy={true} exact='true' offset={-80}>About</SidebarLink>
+                    <SidebarLink to='blog' onClick={toggle} smooth={true} duration={500} spy={true} exact='true' offset={-80}>BLOG</SidebarLink>
+                    <SidebarLink to='projects' onClick={toggle} smooth={true} duration={500} spy={true} exact='true' offset={-80}>Projects</SidebarLink>
+                    <SidebarLink to='services' onClick={toggle} smooth={true} duration={500} spy={true} exact='true' offset={-80}>Register</SidebarLink>
                 </SidebarMenu>
                 <SideBtnWrap>
                     <SidebarRoute to='/signin' onClick={toggle}>Sign In</SidebarRoute>

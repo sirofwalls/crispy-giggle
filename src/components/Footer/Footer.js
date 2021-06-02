@@ -1,4 +1,5 @@
 import React from 'react';
+import {animateScroll as scroll} from 'react-scroll';
 
 import {
     FooterContainer,
@@ -19,6 +20,11 @@ import {
 import {FaFacebook, FaInstagram, FaYoutube, FaGithub} from 'react-icons/fa';
 
 const Footer = () => {
+
+    const toggleHome = () => {
+        scroll.scrollToTop();
+    }
+
     return (
         <FooterContainer>
             <FooterWrapper>
@@ -62,7 +68,7 @@ const Footer = () => {
                 </FooterLinksContainer>
                 <FooterMedia>
                     <FooterMediaWrapper>
-                        <MediaLogo to='/'>PTRWLSR</MediaLogo>
+                        <MediaLogo to='/'onClick={toggleHome}>PTRWLSR</MediaLogo>
                         <MediaRights>ptrwlsr.com © {new Date().getFullYear()}</MediaRights>
                         <MediaSocialIcons>
                             <SocialIcons href="/" target="_blank" aria-label="Facebook"><FaFacebook /></SocialIcons>
