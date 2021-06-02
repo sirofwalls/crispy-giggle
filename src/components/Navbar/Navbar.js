@@ -1,12 +1,38 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {FaBars} from 'react-icons/fa';
-import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink, NavImg} from './NavbarElements';
+import {
+    Nav,
+    NavbarContainer,
+    NavLogo,
+    MobileIcon,
+    NavMenu,
+    NavItem,
+    NavLinks,
+    NavBtn,
+    NavBtnLink,
+    NavImg
+} from './NavbarElements';
+
 import Image from '../../images/white_pw.png'
 
 const Navbar = ({toggle}) => {
+    const [navScroll, setNavScroll] = useState(false);
+
+    const changeScroll = () => {
+        if (window.scrollY >= 81) {
+            setNavScroll(true)
+        } else {
+            setNavScroll(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeScroll)
+    }, [])
+
     return (
         <>
-            <Nav>
+            <Nav navScroll={navScroll}>
                 <NavbarContainer>
                     <NavLogo to='/'><NavImg src={Image} /></NavLogo>
                     <MobileIcon onClick={toggle}>
