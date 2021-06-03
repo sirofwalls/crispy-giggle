@@ -81,7 +81,7 @@ export const SubTitle = styled.p`
 `
 
 export const BtnWrap = styled.div`
-    display: flex;
+    display: ${({buttonEnable}) => (buttonEnable ? 'flex' : 'none')};
     justify-content: flex-start;
 `
 

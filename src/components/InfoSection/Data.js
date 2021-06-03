@@ -3,16 +3,19 @@ export const infoObj1 = {
     lightBg: false,
     lightText: true,
     lightTextDesc: true,
-    topLine: 'Placeholder Title',
-    headLine: 'Placeholder text for the headline',
-    description: 'This is even more placeholder text for the description area',
+    topLine: 'About Me',
+    headLine: 'I am addicted to tech',
+    description: 'My name is Peter. I am an all around IT nerd who gets excited with all of the different tech options in the world. When i am not trying to learn I help run an online gaming community with some of my closest friends. This site is currently the minimal viable product. i wanted to get it live as inspiration for me to keep growing my skills as I develop the site.',
     buttonLabel: 'Button Text',
     imgStart: false,
-    img: require('../../images/svg-1.svg').default,
+    img: require('../../images/about_me.svg').default,
     alt: 'alt',
     dark: true,
     primary: true,
-    darkText: false
+    darkText: false,
+    buttonEnable: false,
+    localButton: true,
+    buttonPath: 'home'
 }
 
 export const infoObj2 = {
@@ -20,16 +23,19 @@ export const infoObj2 = {
     lightBg: true,
     lightText: false,
     lightTextDesc: false,
-    topLine: 'Placeholder Title',
-    headLine: 'Placeholder text for the headline',
-    description: 'This is even more placeholder text for the description area',
-    buttonLabel: 'Button Text',
+    topLine: 'My BLOG',
+    headLine: 'Currently not in working order.',
+    description: 'I am still building this site and the BLOG section and pages have not been added yet. I have this site code as a public repository on my github page if you are interested in watching my progress.',
+    buttonLabel: 'Go to my Github',
     imgStart: true,
-    img: require('../../images/svg-2.svg').default,
+    img: require('../../images/blog_content.svg').default,
     alt: 'alt',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    buttonEnable: true,
+    localButton: false,
+    buttonPath: '//github.com/sirofwalls/'
 }
 
 export const infoObj3 = {
@@ -37,14 +43,17 @@ export const infoObj3 = {
     lightBg: false,
     lightText: true,
     lightTextDesc: true,
-    topLine: 'Placeholder Title',
-    headLine: 'Placeholder text for the headline',
-    description: 'This is even more placeholder text for the description area',
+    topLine: 'My Projects',
+    headLine: 'This is the first!',
+    description: 'This is my first official project! This section is not working right now either, but it is being worked on! If you wnt me to help you with your project so i can show off my skills let me know!',
     buttonLabel: 'Button Text',
     imgStart: false,
-    img: require('../../images/svg-3.svg').default,
+    img: require('../../images/project_coming.svg').default,
     alt: 'alt',
     dark: true,
     primary: true,
-    darkText: false
+    darkText: false,
+    buttonEnable: false,
+    localButton: true,
+    buttonPath: 'about',
 }

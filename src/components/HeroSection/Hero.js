@@ -17,11 +17,11 @@ const HeroSection = () => {
                 {/* <VideoBg autoPlay loop muted src={Video} type='video/mp4' />  */}
             </HeroBg>
             <HeroContent>
-                <HeroH1>Placeholder Text</HeroH1>
-                <HeroP>Sign Up for more placeholder text</HeroP>
+                <HeroH1>My name is Peter</HeroH1>
+                <HeroP>This is my personal site and a learning tool!</HeroP>
                 <HeroBtnWrapper>
-                    <Button to='signup' onMouseEnter={onHover} onMouseLeave={onHover} primary="true" dark='true'>
-                        My Button{hover ? <ArrowForward/> : <ArrowRight/>}
+                    <Button to='about' onMouseEnter={onHover} onMouseLeave={onHover} primary="true" dark='true' smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+                        Check me out{hover ? <ArrowForward/> : <ArrowRight/>}
                     </Button>
                 </HeroBtnWrapper>
             </HeroContent>
