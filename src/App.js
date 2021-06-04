@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Sidebar from './components/Sidebar/Sidebar';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import Blog from './pages/Blog';
+import BlogArticle from './components/BlogArticle/BlogArticle';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +22,8 @@ function App() {
       <Navbar toggle={toggle}/>
       <Switch>
         <Route path='/' component={Home} exact />
+        <Route path='/blog' component={Blog} exact />
+        <Route path='/blog:id' component={BlogArticle} />
       </Switch>
       <Footer />
     </Router>
