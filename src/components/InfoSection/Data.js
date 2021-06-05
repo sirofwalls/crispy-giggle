@@ -5,7 +5,7 @@ export const infoObj1 = {
     lightTextDesc: true,
     topLine: 'About Me',
     headLine: 'I am addicted to tech',
-    description: 'My name is Peter. I am an all around IT nerd who gets excited with all of the different tech options in the world. When i am not trying to learn I help run an online gaming community with some of my closest friends. This site is currently the minimal viable product. i wanted to get it live as inspiration for me to keep growing my skills as I develop the site.',
+    description: 'My name is Peter. I am an all-around IT nerd who gets excited with all the different tech options in the world. When I am not trying to learn I help run an online gaming community with some of my closest friends. This site is currently the minimal viable product. I wanted to get it live as inspiration for me to keep growing my skills as I develop the site.',
     buttonLabel: 'Button Text',
     imgStart: false,
     img: require('../../images/about_me.svg').default,
