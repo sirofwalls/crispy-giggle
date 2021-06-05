@@ -2,20 +2,12 @@ import styled from 'styled-components';
 import { Style } from './../Variables/StyleVariables';
 
 export const MultiInfoContainer = styled.div`
-    height: 800px;
+    padding: 30px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: ${({lightBg}) => (lightBg ? Style.lightColor : Style.darkColor)};
-
-    @media screen and (max-width: 768px) {
-        height: 1100px;
-    }
-
-    @media screen and (max-width: 480px) {
-        height: 1300px;
-    }
 `
 
 export const MultiInfoWrapper = styled.div`
@@ -63,13 +55,15 @@ export const MultiInfoIcon = styled.img`
 `
 
 export const MultiInfoH1 = styled.h1`
-    font-size: 2.5rem;
-    /* color: ${({cardTitleDark}) => (cardTitleDark ? Style.darkColor : Style.lightColor)}; */
+    margin-bottom: 24px;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 600;
     color: ${Style.mainColor};
-    margin-bottom: 64px;
+    text-align: center;
 
-    @media screen and (max-width: 480px) {
-        font-size: 2rem;
+    @media screen and (max-width: 540px) {
+        font-size: 30px;
     }
 `
 
