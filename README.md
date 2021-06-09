@@ -20,3 +20,4 @@ Color Scheme i want to use... maybe:
 - I think I did it! the minimally viable product of this site is complete! I had to create a new button variant for external links, like to my GitHub, and I made some of the options in the info sections a little more modular with the data and variable file. Now is it time to figure out how to push this to my server and make it live!
 - I can write the code... but cannot spell to save my life! Thank you to my friends who found my errors!
 - I wrote the styling for the blog posts wrong. I was not thinking about pulling the data from the database, as well as looking at the horrible data file. the Data file is nice, but so messy, and not practical for dynamic rendering for a different ammount of posts. 
+- I over think everything and it took me way too long to reqrite the post list section, and then to add the filter. (remember that "=" does not equate to "===")
