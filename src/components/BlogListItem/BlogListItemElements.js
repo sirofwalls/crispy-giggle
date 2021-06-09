@@ -11,7 +11,7 @@ export const BlogItemWrapper = styled.div`
 
     margin-bottom: 15px;
     border-radius: 15px;
-    background: ${({lightBg}) => (lightBg ? Style.lightColor : Style.darkColor)};
+    background: ${Style.lightColor};
     padding: 20px 25px;
 
     margin-left: 20px;
@@ -32,7 +32,7 @@ export const BlogHeading = styled.h2`
     line-height: 1.1;
     font-weight: 600;
     align-self: center;
-    color: ${({lightText}) => (lightText ? Style.lightColor : Style.darkColor)};
+    color: ${Style.darkColor};
 
     @media screen and (max-width: 768px) {
         font-size: 1.7rem;
@@ -44,7 +44,7 @@ export const BlogPartialText = styled.p`
     margin-bottom: 35px;
     font-size: 1.2rem;
     line-height: 24px;
-    color: ${({darkText}) => (darkText ? Style.darkColor : Style.lightColor)};
+    color: ${Style.darkColor};
 
     @media screen and (max-width: 768px) {
         font-size: 1rem;

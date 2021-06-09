@@ -28,16 +28,42 @@ export const BlogListWrapper = styled.div`
 
     margin-left: 20px;
     margin-right: 20px;
-    border: 3px solid ${Style.darkColor};  
+    border: 3px solid ${Style.darkColor};
+`
+
+export const ListHeadingWrapper = styled.div`
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+export const CategorySelect = styled.select`
+    justify-self: center;
+    height: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 15px;
+    background-color: ${Style.darkColor};
+    color: ${Style.lightColor};
+    padding: 0 50px;
+    text-transform: capitalize;
+`
+
+export const CategoryOption = styled.option`
+    text-transform: capitalize;
+    text-align: center;
+    width: 100%;
 `
 
 export const BlogListHeading = styled.h1`
-display: flex;
-justify-content: center;
-align-content: center;
-margin-top: 30px;
-margin-bottom: 40px;
-font-size: 2.5rem;
-width: 100%;
-background-color: ${Style.lightColor};
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: ${Style.lightColor};
 `

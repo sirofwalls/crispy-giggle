@@ -1,19 +1,29 @@
 import React from 'react'
 import BlogListItem from '../BlogListItem/BlogListItem'
-import { blogObj1, blogObj2, blogObj3 } from '../BlogListItem/Data'
-import { BlogListContainer, BlogListHeading, BlogListWrapper } from './BlogListElements'
+import {blogPosts, blogCategories} from '../Variables/DummyBlogData';
+import { BlogListContainer, BlogListHeading, BlogListWrapper,ListHeadingWrapper, CategorySelect, CategoryOption } from './BlogListElements'
 
 const BlogList = () => {
     return (
         <>
         <BlogListContainer>
             <BlogListWrapper>
-                <BlogListHeading>Here are my BLOG Posts!</BlogListHeading>
-                <BlogListItem {...blogObj1} />
-                <BlogListItem {...blogObj2} />
-                <BlogListItem {...blogObj3} />
-                <BlogListItem {...blogObj2} />
-                <BlogListItem {...blogObj3} />
+                <ListHeadingWrapper>
+                    <BlogListHeading>Here are my BLOG Posts!</BlogListHeading>
+                    <CategorySelect>
+                        <CategoryOption value=''>--Categories--</CategoryOption>
+                        {blogCategories.map((item, index) => {
+                            return (
+                                <CategoryOption value={item.name} key={index}>{item.name}</CategoryOption>
+                            )
+                        })}
+                    </CategorySelect>
+                </ListHeadingWrapper>
+                {blogPosts.map((items, index) => {
+                    return (
+                        <BlogListItem {...items} key={index} />
+                    )
+                })}
             </BlogListWrapper>
         </BlogListContainer>
         </>

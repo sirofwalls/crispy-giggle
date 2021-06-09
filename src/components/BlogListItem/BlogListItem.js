@@ -11,15 +11,15 @@ import {
 } from './BlogListItemElements';
 import {ExternalButton} from '../ButtonElement';
 
-const BlogListItem = ({id, primary, dark, lightText, darkText, BHeadingText, BPText, ButtonText, lightBg}) => {
+const BlogListItem = ({id, title, description, author, categories}) => {
     return (
-        <BlogItemWrapper id={id} lightBg={lightBg}>
+        <BlogItemWrapper id={id} category={categories}>
             <BlogTextWrapper>
-                <BlogHeading lightText={lightText}>{BHeadingText}</BlogHeading>
-                <BlogPartialText darkText={darkText}>{BPText}</BlogPartialText>
+                <BlogHeading>{title}</BlogHeading>
+                <BlogPartialText>{description.slice(0, 180)}</BlogPartialText>
             </BlogTextWrapper>
             <BtnWrap>
-                <ExternalButton to={{pathname: `/blog:${id}`}} primary={primary ? 1 : 0} dark={dark ? 1 : 0}>{ButtonText}</ExternalButton>
+                <ExternalButton to={{pathname: `/blog/${id}`}} primary={false} dark={false}>Read the entire post</ExternalButton>
                 <BtnEditContainer>
                     <BtnEdit />
                     <Btntrash />
