@@ -16,16 +16,17 @@ export const BlogListContainer = styled.div`
 `
 
 export const BlogListWrapper = styled.div`
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     z-index: 1;
+    width:100%;
     max-width: 1100px;
     justify-content: center;
-
     margin-bottom: 15px;
     border-radius: 15px;
     background: ${Style.lightColor};
     padding: 20px 25px;
-
     margin-left: 20px;
     margin-right: 20px;
     border: 3px solid ${Style.darkColor};

@@ -1,17 +1,35 @@
-import React, {useState} from 'react'
-import BlogListItem from '../BlogListItem/BlogListItem'
-import {blogPosts, blogCategories} from '../Variables/DummyBlogData';
+import React, {useState, useEffect} from 'react';
+import BlogListItem from '../BlogListItem/BlogListItem';
 import { BlogListContainer, BlogListHeading, BlogListWrapper,ListHeadingWrapper, CategorySelect, CategoryOption } from './BlogListElements'
+import axios from 'axios';
 
 const BlogList = () => {
 
     const [filterCategory, setFilterCategory] = useState('');
+    const [posts, setPosts] = useState([]);
+    const [category, setCategory] = useState([]);
+
+    useEffect(() =>{
+        const fetchPosts = async () => {
+            const res = await axios.get('http://localhost:5000/api/posts');
+            setPosts(res.data)
+        }
+        fetchPosts();
+    },[])
+
+    useEffect(() =>{
+        const fetchCategories = async () => {
+            const res = await axios.get('http://localhost:5000/api/categories');
+            setCategory(res.data)
+        }
+        fetchCategories();
+    },[])
     
     const dropDownChangeHandler = (event) => {
         setFilterCategory(event.target.value) 
     }
     
-    const filteredPosts = blogPosts.filter(post => {
+    const filteredPosts = posts.filter(post => {
         if(filterCategory === '') return post.categories;
         return post.categories.includes(filterCategory);
     });
@@ -24,9 +42,9 @@ const BlogList = () => {
                     <BlogListHeading>Here are my BLOG Posts!</BlogListHeading>
                     <CategorySelect onChange={dropDownChangeHandler}>
                         <CategoryOption value=''>--Categories--</CategoryOption>
-                        {blogCategories.map((item, index) => {
+                        {category.map((item, index) => {
                             return (
-                                <CategoryOption value={item.name} key={index}>{item.name}</CategoryOption>
+                                <CategoryOption value={item.name} key={index}>{item.name[0].toUpperCase() + item.name.substr(1)}</CategoryOption>
                             )
                         })}
                     </CategorySelect>

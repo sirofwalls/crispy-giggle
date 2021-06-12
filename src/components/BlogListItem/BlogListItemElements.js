@@ -4,7 +4,9 @@ import {FaEdit,FaTrash} from 'react-icons/fa';
 
 
 export const BlogItemWrapper = styled.div`
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     z-index: 1;
     max-width: 1100px;
     justify-content: center;
@@ -39,7 +41,7 @@ export const BlogHeading = styled.h2`
     }
 `
 
-export const BlogPartialText = styled.p`
+export const BlogPartialText = styled.div`
     max-width: 1000px;
     margin-bottom: 35px;
     font-size: 1.2rem;
@@ -48,6 +50,9 @@ export const BlogPartialText = styled.p`
 
     @media screen and (max-width: 768px) {
         font-size: 1rem;
+    }
+    & > p{
+        margin: 1rem 0;
     }
 `
 export const BtnWrap = styled.div`

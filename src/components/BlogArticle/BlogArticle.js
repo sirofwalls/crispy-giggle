@@ -1,18 +1,28 @@
-import React from 'react';
-import { BlogArticleContainer, BlogArticleWrapper, BlogArticleHeading, BlogArticleText } from './BlogArticleElements'
+import React, {useState, useEffect} from 'react';
+import { BlogArticleContainer, BlogArticleWrapper, BlogArticleHeading, BlogArticleText } from './BlogArticleElements';
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
+import parse from 'html-react-parser';
 
 const BlogArticle = () => {
+    
+    const location = useLocation();
+    const path = location.pathname.split('/')[2];
+    const [post, setPost] = useState({});
+
+    useEffect(() =>{
+        const fetchPost = async () => {
+            const res = await axios.get('http://localhost:5000/api/posts/' + path);
+            setPost(res.data);
+        }
+        fetchPost();
+    },[path])
+
     return (
         <BlogArticleContainer>
             <BlogArticleWrapper>
-                <BlogArticleHeading>Blog Article</BlogArticleHeading>
-                <BlogArticleText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium illo perspiciatis minima, architecto suscipit animi fugiat sint, ad magnam consequatur quisquam facere. Tenetur nisi adipisci nostrum vitae officia aspernatur dolore, consequuntur, eligendi neque cupiditate deserunt non tempora molestias quibusdam fuga reiciendis totam. Officia, doloribus! Mollitia veniam accusamus natus expedita delectus!</BlogArticleText>
-                <BlogArticleText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium illo perspiciatis minima, architecto suscipit animi fugiat sint, ad magnam consequatur quisquam facere. Tenetur nisi adipisci nostrum vitae officia aspernatur dolore, consequuntur, eligendi neque cupiditate deserunt non tempora molestias quibusdam fuga reiciendis totam. Officia, doloribus! Mollitia veniam accusamus natus expedita delectus!</BlogArticleText>
-                <BlogArticleText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium illo perspiciatis minima, architecto suscipit animi fugiat sint, ad magnam consequatur quisquam facere. Tenetur nisi adipisci nostrum vitae officia aspernatur dolore, consequuntur, eligendi neque cupiditate deserunt non tempora molestias quibusdam fuga reiciendis totam. Officia, doloribus! Mollitia veniam accusamus natus expedita delectus!</BlogArticleText>
-                <BlogArticleText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium illo perspiciatis minima, architecto suscipit animi fugiat sint, ad magnam consequatur quisquam facere. Tenetur nisi adipisci nostrum vitae officia aspernatur dolore, consequuntur, eligendi neque cupiditate deserunt non tempora molestias quibusdam fuga reiciendis totam. Officia, doloribus! Mollitia veniam accusamus natus expedita delectus!</BlogArticleText>
-                <BlogArticleText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium illo perspiciatis minima, architecto suscipit animi fugiat sint, ad magnam consequatur quisquam facere. Tenetur nisi adipisci nostrum vitae officia aspernatur dolore, consequuntur, eligendi neque cupiditate deserunt non tempora molestias quibusdam fuga reiciendis totam. Officia, doloribus! Mollitia veniam accusamus natus expedita delectus!</BlogArticleText>
-                <BlogArticleText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium illo perspiciatis minima, architecto suscipit animi fugiat sint, ad magnam consequatur quisquam facere. Tenetur nisi adipisci nostrum vitae officia aspernatur dolore, consequuntur, eligendi neque cupiditate deserunt non tempora molestias quibusdam fuga reiciendis totam. Officia, doloribus! Mollitia veniam accusamus natus expedita delectus!</BlogArticleText>
-                <BlogArticleText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium illo perspiciatis minima, architecto suscipit animi fugiat sint, ad magnam consequatur quisquam facere. Tenetur nisi adipisci nostrum vitae officia aspernatur dolore, consequuntur, eligendi neque cupiditate deserunt non tempora molestias quibusdam fuga reiciendis totam. Officia, doloribus! Mollitia veniam accusamus natus expedita delectus!</BlogArticleText>
+                <BlogArticleHeading>{post.title}</BlogArticleHeading>
+                <BlogArticleText>{post.description && parse(post.description)}</BlogArticleText>
             </BlogArticleWrapper>
         </BlogArticleContainer>
     )
