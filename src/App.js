@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Blog from './pages/Blog';
 import BlogArticle from './components/BlogArticle/BlogArticle';
+import Login from './components/Login/Login';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,7 @@ function App() {
         <Route path='/' component={Home} exact />
         <Route path='/blog' component={Blog} exact />
         <Route path='/blog/:id' component={BlogArticle} />
+        <Route path='/login' component={Login} exact />
       </Switch>
       <Footer />
     </Router>
