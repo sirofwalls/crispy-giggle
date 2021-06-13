@@ -26,6 +26,7 @@ export const FormTitle = styled.h1`
     color: ${Style.darkColor};
     padding-bottom: 20px;
     text-align: center;
+    font-size: 3rem;
 `
 
 export const FormButton = styled.button`

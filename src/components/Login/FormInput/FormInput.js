@@ -5,8 +5,8 @@ import {InputLabel, InputInput} from './FormInputElements'
 const FormInput = ({input, type, label}) => {
     return (
         <>
-        <InputInput htmlFor={input}>{label}</InputInput>
-        <InputLabel 
+        <InputLabel htmlFor={input}>{label}</InputLabel>
+        <InputInput 
             id={input}
             type={type}
             name={input}
