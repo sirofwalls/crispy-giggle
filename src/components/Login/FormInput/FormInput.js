@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-import {InputLabel, InputInput} from './FormInputElements'
+import {InputLabel, InputInput, ErrorMessage} from './FormInputElements'
 
-const FormInput = ({input, type, label}) => {
+const FormInput = ({input, type, label, value, change, errors}) => {
+
+    
     return (
         <>
         <InputLabel htmlFor={input}>{label}</InputLabel>
@@ -11,8 +13,10 @@ const FormInput = ({input, type, label}) => {
             type={type}
             name={input}
             placeholder={label}
-            // value={values.input}
+            value={value}
+            onChange={change}
         />
+        {errors && <ErrorMessage>{errors}</ErrorMessage>}
         </>
     )
 }

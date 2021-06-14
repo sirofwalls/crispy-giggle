@@ -15,7 +15,7 @@ export const LoginContainser = styled.div`
     }
 `
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
     background-color: ${Style.lightColor};
     padding:100px;
     display: flex;

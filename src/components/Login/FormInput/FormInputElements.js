@@ -18,3 +18,9 @@ export const InputInput = styled.input`
         outline: none
     }
 `
+
+export const ErrorMessage = styled.p`
+    font-size: 0.8rem;
+    text-align: center;
+    color: tomato;
+`
