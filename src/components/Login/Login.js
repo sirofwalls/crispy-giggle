@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {LoginContainser, FormContainer, FormTitle, FormButton} from './LoginElements';
+import {LoginContainser, FormContainer, FormTitle, FormButton, VictoryMessage, ErrorMessage} from './LoginElements';
 import FormInput from './FormInput/FormInput';
 import useForm from './useForm';
 import validate from '../Variables/LoginValidation';
@@ -10,7 +10,9 @@ const Login = () => {
         handleChange,
         handleSubmit,
         values,
-        errors
+        errors,
+        errorLoginMessage,
+        victoryLogMessage
     } = useForm(validate);
     
     return (
@@ -18,20 +20,14 @@ const Login = () => {
         <LoginContainser>
             <FormContainer onSubmit={handleSubmit}>
                 <FormTitle>Log In</FormTitle>
+                {victoryLogMessage && <VictoryMessage>{victoryLogMessage}</VictoryMessage>}
+                {errorLoginMessage && <ErrorMessage>{errorLoginMessage}</ErrorMessage>}
                 <FormInput
                     input='username'
                     type='text'
                     label='Username'
                     value={values.username}
                     errors={errors.username}
-                    change={handleChange}
-                />
-                <FormInput
-                    input='email'
-                    type='email'
-                    label='Email'
-                    value={values.email}
-                    errors={errors.email}
                     change={handleChange}
                 />
                 <FormInput

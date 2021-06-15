@@ -51,3 +51,13 @@ export const FormButton = styled.button`
         background: ${Style.mainColor};
     }
 `
+
+export const ErrorMessage = styled.p`
+    color: tomato;
+    text-align: center;
+`
+
+export const VictoryMessage = styled.p`
+    color: green;
+    text-align: center;
+`

@@ -24,7 +24,7 @@ export const NavMenuItems = [
 export const NavButtonItems = [
     {
         title: 'Sign In',
-        path: '/signin',
+        path: '/login',
         enabled: false
     }
 ]
