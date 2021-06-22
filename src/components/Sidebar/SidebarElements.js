@@ -66,7 +66,7 @@ export const SidebarLink = styled(LinkS)`
 `
 
 export const SideBtnWrap = styled.div`
-    display: ${({enabled}) => (enabled ? 'flex' : 'none')};
+    display: flex;
     justify-content: center;
 `
 

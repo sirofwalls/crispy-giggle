@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {FaBars} from 'react-icons/fa';
 import {animateScroll as scroll} from 'react-scroll';
-import { NavMenuItems, NavButtonItems } from './../Variables/NavVariables';
+import UserContext from '../../context/UserContext';
+import { useContext } from 'react';
+import axios from 'axios';
+import { NavMenuItems } from './../Variables/NavVariables';
 import {
     Nav,
     NavbarContainer,
@@ -15,7 +18,8 @@ import {
     NavImg
 } from './NavbarElements';
 
-import Image from '../../images/white_pw.png'
+import Image from '../../images/white_pw.png';
+import { getSuggestedQuery } from '@testing-library/dom';
 
 const Navbar = ({toggle}) => {
     const [navScroll, setNavScroll] = useState(false);
@@ -28,12 +32,19 @@ const Navbar = ({toggle}) => {
         }
     }
 
+    const {user, getUser} = useContext(UserContext);
+
     useEffect(() => {
         window.addEventListener('scroll', changeScroll)
     }, []);
 
     const toggleHome = () => {
         scroll.scrollToTop();
+    }
+
+    const logout = async () => {
+        await axios.get('http://localhost:5000/api/auth/logout');
+        await getUser();
     }
 
     return (
@@ -47,19 +58,21 @@ const Navbar = ({toggle}) => {
                     <NavMenu>
                         {NavMenuItems.map((item, index) => {
                             return(
-                                <NavItem>
+                                <NavItem key={index}>
                                     <NavLinks to={item.path} smooth={true} duration={500} spy={true} exact='true' offset={-80}>{item.title}</NavLinks>
                                 </NavItem>
                             )
                         })}
                     </NavMenu>
-                    {NavButtonItems.map((item, index) => {
-                        return(
-                            <NavBtn key={index} enabled={item.enabled}>
-                                <NavBtnLink to={item.path}>{item.title}</NavBtnLink>
-                            </NavBtn>
-                        )
-                    })}
+                    {user === null ?
+                        (<NavBtn>
+                            <NavBtnLink to={'/login'}>Log In</NavBtnLink>
+                        </NavBtn>)
+                        :
+                        (user && <NavBtn>
+                            <NavBtnLink to={'/'} onClick={logout}>Log Out</NavBtnLink>
+                        </NavBtn>)
+                    }
                 </NavbarContainer>
             </Nav>
         </>

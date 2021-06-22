@@ -1,5 +1,8 @@
 import React from 'react';
-import { NavMenuItems, NavButtonItems } from './../Variables/NavVariables';
+import { NavMenuItems } from './../Variables/NavVariables';
+import UserContext from '../../context/UserContext';
+import axios from 'axios';
+import { useContext } from 'react';
 import {
     SidebarContainer,
     Icon,
@@ -13,6 +16,13 @@ import {
 
     const Sidebar = ({isOpen, toggle}) => {
 
+        const {user, getUser} = useContext(UserContext);
+
+        const logout = async () => {
+            await axios.get('http://localhost:5000/api/auth/logout');
+            await getUser();
+        }
+
     return (
         <SidebarContainer isOpen={isOpen} onClick={toggle}>
             <Icon onClick={toggle}>
@@ -22,17 +32,22 @@ import {
                 <SidebarMenu>
                     {NavMenuItems.map((item, index) => {
                         return(
-                            <SidebarLink to={item.path} onClick={toggle} smooth={true} duration={500} spy={true} exact='true' offset={-80}>{item.title}</SidebarLink>
+                            <SidebarLink key={index}to={item.path} onClick={toggle} smooth={true} duration={500} spy={true} exact='true' offset={-80}>{item.title}</SidebarLink>
                         )
                     })}
                 </SidebarMenu>
-                {NavButtonItems.map((item, index) => {
-                    return(
-                        <SideBtnWrap key={index} enabled={item.enabled}>
-                            <SidebarRoute to={item.path} onClick={toggle}>{item.title}</SidebarRoute>
-                        </SideBtnWrap>
-                    )
-                })}
+                {/* <SideBtnWrap>
+                    <SidebarRoute to={item.path} onClick={toggle}>{item.title}</SidebarRoute>
+                </SideBtnWrap> */}
+                {user === null ?
+                    (<SideBtnWrap>
+                        <SidebarRoute to={'/login'}>Log In</SidebarRoute>
+                    </SideBtnWrap>)
+                    :
+                    (user && <SideBtnWrap>
+                        <SidebarRoute to={'/'} onClick={logout}>Log Out</SidebarRoute>
+                    </SideBtnWrap>)
+                }
             </SidebarWrapper>
         </SidebarContainer>
     )

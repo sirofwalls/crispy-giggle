@@ -1,5 +1,7 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import UserContext from "../../context/UserContext";
 
 const useForm = (validate) => {
     const [values, setValues] = useState({
@@ -9,8 +11,10 @@ const useForm = (validate) => {
 
     const [errors, setErrors] = useState({});
 
-    const [errorLoginMessage, setErrorLoginMessage] = useState()
-    const [victoryLogMessage, setVoctoryLogMessage] = useState()
+    const [errorLoginMessage, setErrorLoginMessage] = useState();
+    const [victoryLogMessage, setVictoryLogMessage] = useState();
+    const history = useHistory();
+    const {getUser} = useContext(UserContext);
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -25,22 +29,24 @@ const useForm = (validate) => {
 
         setErrors(validate(values));
         setErrorLoginMessage();
-        setVoctoryLogMessage();
+        setVictoryLogMessage();
 
         if(!errors.username && !errors.password) {
             let formData = {
                 username: values.username,
                 password: values.password
             }
-            const res = await axios.post('http://localhost:5000/api/auth/login', formData).catch((err) =>{
-                if (err) setErrorLoginMessage(err.response.data.message);
-            });
 
-            if(res && res.status === 200) {
-                setVoctoryLogMessage(res.data.message);
-                localStorage.setItem('auth-token', res.data.token)
+            try {
+                const res = await axios.post('http://localhost:5000/api/auth/login', formData)
+                if(res && res.status === 200) setVictoryLogMessage(res.data.message);
+                await getUser();
+                setTimeout(() => history.push('/'), 3000)
+            } catch (err) {
+                if (err) setErrorLoginMessage(err.response.data.message);
             }
         }
+
     }
 
     return {

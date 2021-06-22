@@ -1,31 +1,30 @@
 export const NavMenuItems = [
     {
         title: 'About',
-        path: 'about',
-        enabled: true
+        path: 'about'
     },
     {
         title: 'BLOG',
-        path: 'blog',
-        enabled: true
+        path: 'blog'
     },
     {
         title: 'Projects',
-        path: 'projects',
-        enabled: true
+        path: 'projects'
     },
     {
         title: 'Coming Soon',
-        path: 'coming-soon',
-        enabled: true
+        path: 'coming-soon'
     }
 ]
 
 export const NavButtonItems = [
     {
-        title: 'Sign In',
-        path: '/login',
-        enabled: false
+        title: 'Log In',
+        path: '/login'
+    },
+    {
+        title: 'Log out',
+        path: '/'
     }
 ]
 
