@@ -39,6 +39,7 @@ export const ListHeadingWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 `
 
 export const CategorySelect = styled.select`
@@ -65,6 +66,29 @@ export const BlogListHeading = styled.h1`
     align-content: center;
     font-size: 2.5rem;
     margin-bottom: 20px;
-    width: 100%;
+    text-align: center;
     background-color: ${Style.lightColor};
+`
+
+export const BlogEditButton = styled.button`
+    border-radius: 50px;
+    background: ${Style.darkColor};
+    white-space: nowrap;
+    padding: 12px 30px;
+    color: ${Style.lightColor};
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin: 3rem 0;
+
+    &:hover{
+        transition: all 0.2s ease-in-out;
+        background: ${Style.mainColor};
+    }
 `

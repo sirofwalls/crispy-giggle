@@ -19,7 +19,6 @@ import {
 } from './NavbarElements';
 
 import Image from '../../images/white_pw.png';
-import { getSuggestedQuery } from '@testing-library/dom';
 
 const Navbar = ({toggle}) => {
     const [navScroll, setNavScroll] = useState(false);
