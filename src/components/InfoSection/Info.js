@@ -12,7 +12,8 @@ import {
     TopLine,
     Heading,
     SubTitle,
-    BtnWrap
+    BtnWrap,
+    ExternalLink
 } from './InfoElements';
 
 const InfoSection = ({
@@ -47,24 +48,19 @@ const InfoSection = ({
                                 <SubTitle darkText={darkText}>{description}</SubTitle>
                                 <BtnWrap buttonEnable={buttonEnable}>
                                     {localButton ? 
-                                    <Button
-                                        to={buttonPath}
-                                        smooth={true}
-                                        duration={500}
-                                        spy={true}
-                                        exact='true'
-                                        offset={-80}
-                                        primary={primary ? 1 : 0}
-                                        dark={dark ? 1: 0}
-                                        dark2={dark2 ? 1: 0}
-                                    >{buttonLabel}</Button> : 
                                     <ExternalButton
-                                        to={buttonPath}
+                                    to={buttonPath}
+                                    primary={primary ? 1 : 0}
+                                    dark={dark ? 1: 0}
+                                    dark2={dark2 ? 1: 0}
+                                >{buttonLabel}</ExternalButton> : 
+                                    <ExternalLink
+                                        href={buttonPath}
                                         target='_blank'
                                         primary={primary ? 1 : 0}
                                         dark={dark ? 1: 0}
                                         dark2={dark2 ? 1: 0}
-                                    >{buttonLabel}</ExternalButton>}
+                                    >{buttonLabel}</ExternalLink>}
                                 </BtnWrap>
                             </TextWrapper>
                         </Column1>

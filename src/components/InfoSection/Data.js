@@ -24,9 +24,9 @@ export const infoObj2 = {
     lightText: false,
     lightTextDesc: false,
     topLine: 'My BLOG',
-    headLine: 'Currently not in working order.',
-    description: 'I am still building this site and the BLOG section and pages have not been added yet. I have this site code as a public repository on my GitHub page if you are interested in watching my progress.',
-    buttonLabel: 'Go to my Github',
+    headLine: 'Check out my posts!',
+    description: 'The BLOG section is working now! Check them out and tell me what you think! There might not be much at first, but I will try to add more as I continue to develop this site and learn more! They are created with CKEditor.',
+    buttonLabel: 'Look at my articles',
     imgStart: true,
     img: require('../../images/blog_content.svg').default,
     alt: 'alt',
@@ -34,8 +34,8 @@ export const infoObj2 = {
     primary: false,
     darkText: true,
     buttonEnable: true,
-    localButton: false,
-    buttonPath: '//github.com/sirofwalls/'
+    localButton: true,
+    buttonPath: '/blog'
 }
 
 export const infoObj3 = {
@@ -45,15 +45,15 @@ export const infoObj3 = {
     lightTextDesc: true,
     topLine: 'My Projects',
     headLine: 'This is the first!',
-    description: 'This is my first official project! This section is not working right now either, but it is being worked on! If you want me to help you with your project so I can show off my skills let me know!',
-    buttonLabel: 'Button Text',
+    description: 'This is my official project! I am publishing my code on my GitHub account as I develop it, as well as some of my own notes are on the README file as I go along.',
+    buttonLabel: 'Check out my GitHub!',
     imgStart: false,
     img: require('../../images/project_coming.svg').default,
     alt: 'alt',
     dark: true,
     primary: true,
     darkText: false,
-    buttonEnable: false,
-    localButton: true,
-    buttonPath: 'about',
+    buttonEnable: true,
+    localButton: false,
+    buttonPath: 'https://github.com/sirofwalls'
 }
