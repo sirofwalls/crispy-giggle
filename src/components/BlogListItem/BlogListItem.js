@@ -15,7 +15,7 @@ import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import { useContext } from 'react';
 
-const BlogListItem = ({_id:id, title, description, author, categories, fetchPosts}) => {
+const BlogListItem = ({_id:id, title, description, author, categories, fetchPosts, editPost}) => {
 
     async function deletePost() {
         if (window.confirm('Do you really want to delete this post?')){
@@ -26,6 +26,14 @@ const BlogListItem = ({_id:id, title, description, author, categories, fetchPost
 
     const {user} = useContext(UserContext);
 
+    const editPostData = {
+        _id: id,
+        title,
+        description,
+        author,
+        categories
+    }
+
     return (
         <BlogItemWrapper id={id} category={categories}>
             <BlogTextWrapper>
@@ -35,10 +43,11 @@ const BlogListItem = ({_id:id, title, description, author, categories, fetchPost
             <BtnWrap>
                 <ExternalButton to={{pathname: `/blog/${id}`}}>Read the entire post</ExternalButton>
                 {user === author &&
-                <BtnEditContainer>
-                    <BtnEdit />
-                    <Btntrash onClick={deletePost}/>
-                </BtnEditContainer>}
+                    <BtnEditContainer>
+                        <BtnEdit onClick={() => editPost(editPostData)}/>
+                        <Btntrash onClick={deletePost}/>
+                    </BtnEditContainer>
+                }
             </BtnWrap>
         </BlogItemWrapper>  
     )

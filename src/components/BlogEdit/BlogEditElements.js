@@ -6,6 +6,14 @@ export const BlogEditForm = styled.form`
     flex-direction: column;
 `
 
+export const EditErrorMessage = styled.p`
+    text-align: center;
+    text-transform: capitalize;
+    color: tomato;
+    font-weight: bold;
+    font-size: 1.5rem;
+`
+
 export const BlogEditContainer = styled.div`
     width: 100%;
     padding: 0 2rem;
@@ -36,6 +44,7 @@ export const EditLabelInput = styled.input`
     font-size: 1.5rem;
     border: 1px solid ${Style.darkColor};
     width: 100%;
+    padding: .5rem 0;
 
     &:focus{
         outline: none

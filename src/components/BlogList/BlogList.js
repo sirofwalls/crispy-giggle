@@ -9,9 +9,10 @@ import UserContext from '../../context/UserContext';
 const BlogList = () => {
 
     const [filterCategory, setFilterCategory] = useState('');
-    const [posts, setPosts] = useState([]);
     const [category, setCategory] = useState([]);
+    const [posts, setPosts] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
+    const [postEditData, setPostEditData] = useState(null);
 
     const {user} = useContext(UserContext);
 
@@ -23,6 +24,11 @@ const BlogList = () => {
             console.log(err)
         }
     };
+
+    const editPost = (editPostData) => {
+        setPostEditData(editPostData);
+        setIsOpen(true);
+    }
 
     useEffect(() =>{
         fetchPosts();
@@ -54,7 +60,7 @@ const BlogList = () => {
                 <ListHeadingWrapper>
                     <BlogListHeading>Here are my BLOG Posts!</BlogListHeading>
                     {!isOpen && user &&<BlogEditButton onClick={() => setIsOpen(true)}>Create New Post</BlogEditButton>}
-                    {isOpen && <BlogEdit setIsOpen={setIsOpen}/>}
+                    {isOpen && <BlogEdit setIsOpen={setIsOpen} postEditData={postEditData} fetchPosts={fetchPosts}/>}
                     <CategorySelect onChange={dropDownChangeHandler}>
                         <CategoryOption value=''>--Categories--</CategoryOption>
                         {category.map((item, index) => {
@@ -68,7 +74,7 @@ const BlogList = () => {
                 </ListHeadingWrapper>
                 {filteredPosts.map((items, index) => {
                     return (
-                        <BlogListItem {...items} key={index} fetchPosts={fetchPosts}/>
+                        <BlogListItem {...items} key={index} editPost={editPost} fetchPosts={fetchPosts}/>
                     )
                 })}
             </BlogListWrapper>
