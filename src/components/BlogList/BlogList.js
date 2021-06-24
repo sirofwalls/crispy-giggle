@@ -60,7 +60,7 @@ const BlogList = () => {
                 <ListHeadingWrapper>
                     <BlogListHeading>Here are my BLOG Posts!</BlogListHeading>
                     {!isOpen && user &&<BlogEditButton onClick={() => setIsOpen(true)}>Create New Post</BlogEditButton>}
-                    {isOpen && <BlogEdit setIsOpen={setIsOpen} postEditData={postEditData} fetchPosts={fetchPosts}/>}
+                    {isOpen && <BlogEdit setIsOpen={setIsOpen} setPostEditData={setPostEditData} postEditData={postEditData} fetchPosts={fetchPosts}/>}
                     <CategorySelect onChange={dropDownChangeHandler}>
                         <CategoryOption value=''>--Categories--</CategoryOption>
                         {category.map((item, index) => {

@@ -4,7 +4,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {BlogEditContainer, EditErrorMessage, BlogEditForm, EditLabel, Editor, EditLabelInput, EditorSubmitButton, EditorCancelButton, EditorButtonSection} from './BlogEditElements';
 import axios from 'axios';
 
-function BlogEdit({setIsOpen, fetchPosts, postEditData}) {
+function BlogEdit({setIsOpen, fetchPosts, postEditData, setPostEditData}) {
 
     const [text, setText] = useState('');
     const [title, setTitle]= useState('');
@@ -54,6 +54,9 @@ function BlogEdit({setIsOpen, fetchPosts, postEditData}) {
     }
 
     const cancelButtonHandler = () => {
+        setPostEditData(null);
+        setTitle('');
+        setText('');
         setIsOpen(false)
     }
 
