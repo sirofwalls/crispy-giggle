@@ -70,7 +70,7 @@ const Navbar = ({toggle}) => {
                         </NavBtn>)
                         :
                         (user && <NavBtn>
-                            <NavBtnLink to={'/'} onClick={logout}>Log Out</NavBtnLink>
+                            <NavBtnLink onClick={logout}>Log Out</NavBtnLink>
                         </NavBtn>)
                     }
                 </NavbarContainer>

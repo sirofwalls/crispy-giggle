@@ -46,7 +46,7 @@ import {
                     </SideBtnWrap>)
                     :
                     (user && <SideBtnWrap>
-                        <SidebarRoute to={'/'} onClick={logout}>Log Out</SidebarRoute>
+                        <SidebarRoute onClick={logout}>Log Out</SidebarRoute>
                     </SideBtnWrap>)
                 }
             </SidebarWrapper>
