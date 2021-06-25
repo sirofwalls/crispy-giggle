@@ -13,12 +13,13 @@ const BlogList = () => {
     const [posts, setPosts] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [postEditData, setPostEditData] = useState(null);
+    const API_URL = (process.env.NODE_ENV === 'production' ? 'https://api.ptrwlsr.com' : 'http://localhost:5000');
 
     const {user} = useContext(UserContext);
 
     const fetchPosts = async () => {
         try{
-            const res = await axios.get('http://localhost:5000/api/posts');
+            const res = await axios.get(API_URL + '/api/posts');
             setPosts(res.data)
         } catch (err) {
             console.log(err)
@@ -36,7 +37,7 @@ const BlogList = () => {
 
     useEffect(() =>{
         const fetchCategories = async () => {
-            const res = await axios.get('http://localhost:5000/api/categories');
+            const res = await axios.get(API_URL + '/api/categories');
             setCategory(res.data)
         }
         fetchCategories();

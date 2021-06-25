@@ -8,7 +8,8 @@ function BlogEdit({setIsOpen, fetchPosts, postEditData, setPostEditData}) {
 
     const [text, setText] = useState('');
     const [title, setTitle]= useState('');
-    const [errorMessage, setErrorMessage] = useState(null)
+    const [errorMessage, setErrorMessage] = useState(null);
+    const API_URL = (process.env.NODE_ENV === 'production' ? 'https://api.ptrwlsr.com' : 'http://localhost:5000');
 
     useEffect(() => {
         if(postEditData) {
@@ -27,14 +28,14 @@ function BlogEdit({setIsOpen, fetchPosts, postEditData, setPostEditData}) {
 
         if (!postEditData){
             try{
-                await axios.post('http://localhost:5000/api/posts', blogData)
+                await axios.post(API_URL + '/api/posts', blogData)
             } catch (err) {
                 if (err.response.data) setErrorMessage(err.response.data)
                 return
             }
         } else {
             try {
-                await axios.put('http://localhost:5000/api/posts/' + postEditData._id, blogData)
+                await axios.put(API_URL + '/api/posts/' + postEditData._id, blogData)
             } catch(err) {
                 if (err.response.data) setErrorMessage(err.response.data)
                 return

@@ -22,6 +22,7 @@ import Image from '../../images/white_pw.png';
 
 const Navbar = ({toggle}) => {
     const [navScroll, setNavScroll] = useState(false);
+    const API_URL = (process.env.NODE_ENV === 'production' ? 'https://api.ptrwlsr.com' : 'http://localhost:5000');
 
     const changeScroll = () => {
         if (window.scrollY >= 81) {
@@ -42,7 +43,7 @@ const Navbar = ({toggle}) => {
     }
 
     const logout = async () => {
-        await axios.get('http://localhost:5000/api/auth/logout');
+        await axios.get(API_URL + '/api/auth/logout');
         await getUser();
     }
 

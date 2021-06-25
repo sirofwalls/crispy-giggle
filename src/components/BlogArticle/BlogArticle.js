@@ -9,10 +9,11 @@ const BlogArticle = () => {
     const location = useLocation();
     const path = location.pathname.split('/')[2];
     const [post, setPost] = useState({});
+    const API_URL = (process.env.NODE_ENV === 'production' ? 'https://api.ptrwlsr.com' : 'http://localhost:5000');
 
     useEffect(() =>{
         const fetchPost = async () => {
-            const res = await axios.get('http://localhost:5000/api/posts/' + path);
+            const res = await axios.get(API_URL + '/api/posts/' + path);
             setPost(res.data);
         }
         fetchPost();

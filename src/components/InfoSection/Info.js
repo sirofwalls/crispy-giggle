@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ExternalButton } from '../ButtonElement';
+import { ExternalButton } from '../ButtonElement';
 import {
     Column2,
     Img,

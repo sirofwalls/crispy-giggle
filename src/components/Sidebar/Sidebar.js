@@ -17,9 +17,10 @@ import {
     const Sidebar = ({isOpen, toggle}) => {
 
         const {user, getUser} = useContext(UserContext);
+        const API_URL = (process.env.NODE_ENV === 'production' ? 'https://api.ptrwlsr.com' : 'http://localhost:5000');
 
         const logout = async () => {
-            await axios.get('http://localhost:5000/api/auth/logout');
+            await axios.get(API_URL + '/api/auth/logout');
             await getUser();
         }
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 
@@ -15,6 +15,7 @@ const useForm = (validate) => {
     const [victoryLogMessage, setVictoryLogMessage] = useState();
     const history = useHistory();
     const {getUser} = useContext(UserContext);
+    const API_URL = (process.env.NODE_ENV === 'production' ? 'https://api.ptrwlsr.com' : 'http://localhost:5000');
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -38,7 +39,7 @@ const useForm = (validate) => {
             }
 
             try {
-                const res = await axios.post('http://localhost:5000/api/auth/login', formData)
+                const res = await axios.post(API_URL + '/api/auth/login', formData)
                 if(res && res.status === 200) setVictoryLogMessage(res.data.message);
                 await getUser();
                 setTimeout(() => history.push('/'), 3000)

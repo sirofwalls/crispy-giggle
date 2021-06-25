@@ -16,10 +16,11 @@ import UserContext from '../../context/UserContext';
 import { useContext } from 'react';
 
 const BlogListItem = ({_id:id, title, description, author, categories, fetchPosts, editPost}) => {
+    const API_URL = (process.env.NODE_ENV === 'production' ? 'https://api.ptrwlsr.com' : 'http://localhost:5000');
 
     async function deletePost() {
         if (window.confirm('Do you really want to delete this post?')){
-            await axios.delete('http://localhost:5000/api/posts/' + id);
+            await axios.delete(API_URL + '/api/posts/' + id);
             fetchPosts();
         }
     }

@@ -5,9 +5,10 @@ const UserContext = createContext();
 
 function UserContextProvider(props) {
     const [user, setUser] = useState(undefined);
+    const API_URL = (process.env.NODE_ENV === 'production' ? 'https://api.ptrwlsr.com' : 'http://localhost:5000');
 
     async function getUser() {
-        const userRes = await axios.get('http://localhost:5000/api/auth/loggedIn');
+        const userRes = await axios.get(API_URL + '/api/auth/loggedIn');
         setUser(userRes.data);
     }
 
