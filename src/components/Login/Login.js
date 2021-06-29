@@ -3,6 +3,7 @@ import {LoginContainser, FormContainer, FormTitle, FormButton, VictoryMessage, E
 import FormInput from './FormInput/FormInput';
 import useForm from './useForm';
 import validate from '../Variables/LoginValidation';
+import ScrollToTop from '../ScrollToTop';
 
 const Login = () => {
 
@@ -17,6 +18,7 @@ const Login = () => {
     
     return (
         <>
+        <ScrollToTop />
         <LoginContainser>
             <FormContainer onSubmit={handleSubmit}>
                 <FormTitle>Log In</FormTitle>

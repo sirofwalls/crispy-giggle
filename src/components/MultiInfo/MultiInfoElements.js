@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Style } from './../Variables/StyleVariables';
 
 export const MultiInfoContainer = styled.div`
-    height: 860px;
+    min-height: 860px;
     padding: 30px 0;
     display: flex;
     flex-direction: column;
