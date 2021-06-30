@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalButton } from '../ButtonElement';
+import { SiteButton } from '../ButtonElement';
 import {
     Column2,
     Img,
@@ -48,18 +48,16 @@ const InfoSection = ({
                                 <SubTitle darkText={darkText}>{description}</SubTitle>
                                 <BtnWrap buttonEnable={buttonEnable}>
                                     {localButton ? 
-                                    <ExternalButton
+                                    <SiteButton
                                     to={buttonPath}
                                     primary={primary ? 1 : 0}
                                     dark={dark ? 1: 0}
-                                    dark2={dark2 ? 1: 0}
-                                >{buttonLabel}</ExternalButton> : 
+                                >{buttonLabel}</SiteButton> : 
                                     <ExternalLink
                                         href={buttonPath}
                                         target='_blank'
                                         primary={primary ? 1 : 0}
                                         dark={dark ? 1: 0}
-                                        dark2={dark2 ? 1: 0}
                                     >{buttonLabel}</ExternalLink>}
                                 </BtnWrap>
                             </TextWrapper>

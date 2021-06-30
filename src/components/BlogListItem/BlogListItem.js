@@ -9,7 +9,7 @@ import {
     Btntrash,
     BtnEditContainer,
 } from './BlogListItemElements';
-import {ExternalButton} from '../ButtonElement';
+import {SiteButton} from '../ButtonElement';
 import parse from 'html-react-parser';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
@@ -42,7 +42,7 @@ const BlogListItem = ({_id:id, title, description, author, categories, fetchPost
                 <BlogPartialText>{parse(description.slice(0, 180))}</BlogPartialText>
             </BlogTextWrapper>
             <BtnWrap>
-                <ExternalButton to={{pathname: `/blog/${id}`}}>Read the entire post</ExternalButton>
+                <SiteButton to={{pathname: `/blog/${id}`}} primary={0} big={0}>Read the entire post</SiteButton>
                 {user === author &&
                     <BtnEditContainer>
                         <BtnEdit onClick={() => editPost(editPostData)}/>
