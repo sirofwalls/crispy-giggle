@@ -56,7 +56,7 @@ export const MultiInfoIcon = styled.img`
 `
 
 export const MultiInfoH1 = styled.h1`
-    margin-bottom: 24px;
+    margin: 0 1rem 1.5rem 1rem;
     font-size: 48px;
     line-height: 1.1;
     font-weight: 600;

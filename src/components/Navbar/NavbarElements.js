@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import {Link as LinkR} from 'react-router-dom';
-
-import {Link as LinkS} from 'react-scroll';
-
 import { Style } from './../Variables/StyleVariables';
+import { SiteButton } from '../ButtonElement';
+
+
 
 export const Nav = styled.nav`
     background: ${({navScroll}) => (navScroll ? Style.darkColor : 'transparent')};
@@ -81,7 +81,7 @@ export const NavItem = styled.li`
     height: 80px;
 `
 
-export const NavLinks = styled(LinkS)`
+export const NavLinks = styled(LinkR)`
     color: ${Style.lightColor};
     display: flex;
     align-items: center;
@@ -103,6 +103,7 @@ export const NavLinks = styled(LinkS)`
 export const NavBtn = styled.nav`
     display: flex;
     align-items: center;
+    margin-left: 1rem;
 
     @media screen and (max-width: 768px) {
         display: none;

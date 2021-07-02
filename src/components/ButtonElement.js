@@ -22,6 +22,7 @@ export const ScrollButton = styled(LinkS)`
     align-items: center;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
+    margin: 1rem;
 
     &:hover{
         transition: all 0.2s ease-in-out;

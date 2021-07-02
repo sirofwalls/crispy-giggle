@@ -59,12 +59,11 @@ const Navbar = ({toggle}) => {
                         {NavMenuItems.map((item, index) => {
                             return(
                                 <NavItem key={index}>
-                                    <NavLinks to={item.path} smooth={true} duration={500} spy={true} exact='true' offset={-80}>{item.title}</NavLinks>
+                                    <NavLinks to={item.path}>{item.title}</NavLinks>
                                 </NavItem>
                             )
                         })}
-                    </NavMenu>
-                    {user === null ?
+                        {user === null ?
                         (<NavBtn>
                             <NavBtnLink to={'/login'}>Log In</NavBtnLink>
                         </NavBtn>)
@@ -73,6 +72,7 @@ const Navbar = ({toggle}) => {
                             <NavBtnLink onClick={logout}>Log Out</NavBtnLink>
                         </NavBtn>)
                     }
+                    </NavMenu>
                 </NavbarContainer>
             </Nav>
         </>

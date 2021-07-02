@@ -1,19 +1,7 @@
 export const NavMenuItems = [
     {
-        title: 'About',
-        path: 'about'
-    },
-    {
         title: 'BLOG',
         path: 'blog'
-    },
-    {
-        title: 'Projects',
-        path: 'projects'
-    },
-    {
-        title: 'Coming Soon',
-        path: 'coming-soon'
     }
 ]
 
